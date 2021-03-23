@@ -1,7 +1,7 @@
-LESSON NAME
+OpenMP Offloading
 ===========
 
-Intro
+Intro add
 
 - Write a CMake build system for C, C++, and Fortran projects producing
   libraries and/or executables.
