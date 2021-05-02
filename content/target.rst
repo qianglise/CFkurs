@@ -10,7 +10,7 @@ offloading to GPU
    - Learn how to create memory windows.
    - Learn how to access remote memory windows.
 
-target
+host-device model
 ------------------
 Since version 4.0 , OpenMP supports heterogeneous systems
 OpenMP uses ''target construct'' to offload execution from the host to the target device(s), and hence the directive name.
@@ -25,12 +25,13 @@ Such a host/device model is generally used by OpenMP for target:
   - Generally one single host: CPU
 
 
-One-sided communication in MPI is achieved in three steps, which map onto three sets of functions:
 
 
 
 gpu-derectives +
 Device Execution Model
+
+.. note::
 Device: An implementation-defined logical execution unit.
 
 The general model used by OpenMP for target is a single host and one or more target devices.
@@ -55,6 +56,10 @@ The host then maps data to the device data environment, which is data movement t
 The host then offloads OpenMP target regions to the target device; that is, the code is executed on the device. 
 After execution, the host updates the data between the host and the device, which is transferring data from the device to the host. 
 The host then destroys the data environment on the device.
+
+Target construct
+------------------
+The target construct transfers the control flow and data from the host to the device
 
 
 Creating Parallelism on the Target Device
