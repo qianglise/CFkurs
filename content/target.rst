@@ -59,8 +59,13 @@ The host then destroys the data environment on the device.
 
 Target construct
 ------------------
-The target construct transfers the control flow and data from the host to the device
+The target construct is used to transfer
+- the control flow  from the host to the device
+- data between the host and device ``DEVICS`` 
 
+To execute code on a target device
+ ``target``
+ ``declear target``
 
 Creating Parallelism on the Target Device
 ------------------
