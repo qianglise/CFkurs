@@ -13,10 +13,10 @@ offloading to GPU
 target
 ------------------
 Since version 4.0 , OpenMP supports heterogeneous systems
-OpenMP uses target construct to offload execution from the host to the target device(s), and hence the directive name.
+OpenMP uses "target construct" to offload execution from the host to the target device(s), and hence the directive name.
 
 Such a host/device model is generally used by OpenMP for target:
-- Generally one single host: CPU
+- Normally there is only one single host: CPU
    - Generally one single host: CPU
    - one or multiple target devices of the same kind: CPU, GPU, FPGA, ...
 - Generally one single host: CPU
@@ -26,11 +26,6 @@ Such a host/device model is generally used by OpenMP for target:
 
 One-sided communication in MPI is achieved in three steps, which map onto three sets of functions:
 
-Windows
-  Make memory available on each process for remote memory accesses. We use
-  *memory windows*, which are objects of type ``MPI_Win`` providing handles to
-  remotely-accessible memory.  MPI provides 4 **collective** routines for the
-  creation of memory windows:
 
 
 gpu-derectives +
