@@ -14,35 +14,31 @@ host-device model
 ------------------
 Since version 4.0 , OpenMP supports heterogeneous systems
 OpenMP uses ''target construct'' to offload execution from the host to the target device(s), and hence the directive name.
-In addition, the associated data needs to be transferred to the device(s) as well and this will be the topic of the next chapter. The target device owns the data, so accesses by the CPU during the execution of the target region is forbidden.
+In addition, the associated data needs to be transferred to the device(s) as well and this will be discussed in the next chapter. Once transferred, the target device owns the data and  accesses by the host during the execution of the target region is forbidden.
 
-Such a host/device model is generally used by OpenMP for target:
-- Normally there is only one single host: CPU
-   - Generally one single host: CPU
-   - one or multiple target devices of the same kind: CPU, GPU, FPGA, ...
-- Generally one single host: CPU
- - Generally one single host: CPU
-  - Generally one single host: CPU
+Such a host/device model is generally used by OpenMP for offloading:
+ - Normally there is only one single host: CPU
+ - but one or multiple target devices of the same kind: CPU, GPU, FPGA, ...
+ - unless with unified shared memory, the host and device have separate memory address space
+
 
 
 
 
 
 gpu-derectives +
-Device Execution Model
+
 
 .. note::
-Device: An implementation-defined logical execution unit.
+	Device: An implementation-defined logical execution unit.
 
-The general model used by OpenMP for target is a single host and one or more target devices.
+
 The host is where the  thread begins execution
 
-Can have a single host and one or more target devices 
-Host and Device have separate data environment (except with managed memory or unified shared memory).
 
-execution model
+device execution model
 ------------------
-The execution model is host-centric
+The execution model is host-centric and
 Host creates/destroys data environment on the device(s)
 Host maps data to the device data environment.
 Host then offloads accelerator regions to the device for execution
@@ -57,16 +53,39 @@ The host then offloads OpenMP target regions to the target device; that is, the 
 After execution, the host updates the data between the host and the device, which is transferring data from the device to the host. 
 The host then destroys the data environment on the device.
 
+
 Target construct
 ------------------
 The target construct is used to transfer
  - the control flow  from the host to the device
- - data between the host and device ``DEVICS`` 
- - data between ``HOST``  and  ``DEVICS`` 
+ - data between the host and device ``DEVICE`` 
+ - data between ``HOST``  and  ``DEVICE`` 
 
 To execute code on a target device
  ``target``
  ``declear target``
+Syntax
+Commonly used clauses 
+#pragma omp target [clause[[,]clause]...]
+structured-block
+if(scalar-expression)
+– If the scalar-expression evaluates to false then the target region is executed by the
+host device in the host data environment.
+device(integer-expression)
+– The value of the integer-expression selects the device when a device other than
+the default device is desired.
+private(list) firstprivate(list)
+– creates variables with the same name as those in the list on the device. In the
+case of firstprivate, the value of the variable on the host is copied into the private
+variable created on the device.
+map(map-type: list)
+– map-type may be to, from, tofrom, or alloc. The clause defines how the variables
+in list are moved between the host and the device. (Lots more on this later)...
+nowait
+– The target task is deferred which means the host can run code in parallel to the
+target region on the device.
+
+
 
 Creating Parallelism on the Target Device
 ------------------
@@ -150,3 +169,17 @@ the communicator will reserve the specified memory for remote memory accesses.
    Let's look again at the initial example in the type-along. There we published
    an already allocated buffer as memory window. Use the examples above to
    figure out how to switch to using |term-MPI_Win_allocate|
+
+
+composite directive
+------------------
+Each compiler supports different levels of parallelism
+– LLVM/clang 10, AMD, CCE9, IBM, PGI: teams, parallel
+– (Planned) LLVM/Clang 11, Intel: teams, parallel, simd
+– CCE8: teams, parallel or teams, simd
+•
+Caveats:
+– Real applications will have algorithms that are structured such that they can’t
+immediately use the combined construct.
+– It may also make collapse hard to do
+– Performance can be achieved without combined directives, but likely won’t be portable
