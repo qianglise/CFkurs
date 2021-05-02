@@ -24,6 +24,15 @@ Such a host/device model is generally used by OpenMP for target:
   - Generally one single host: CPU
 
 
+One-sided communication in MPI is achieved in three steps, which map onto three sets of functions:
+
+Windows
+  Make memory available on each process for remote memory accesses. We use
+  *memory windows*, which are objects of type ``MPI_Win`` providing handles to
+  remotely-accessible memory.  MPI provides 4 **collective** routines for the
+  creation of memory windows:
+
+
 gpu-derectives +
 Device Execution Model
 Device: An implementation-defined logical execution unit.
