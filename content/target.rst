@@ -12,9 +12,9 @@ offloading to GPU
 
 .. prereq::
 
-   1. You need `pytest <http://doc.pytest.org>`__ (as part of Anaconda or Miniconda or Virtual Environment).
+   1. You need
    2. Basic understanding of Git.
-   3. You need a `GitHub <https://github.com>`__ or a `Gitlab <https://gitlab.com/>`__ account.
+   3. You need a 
 
 
 
