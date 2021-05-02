@@ -60,8 +60,9 @@ The host then destroys the data environment on the device.
 Target construct
 ------------------
 The target construct is used to transfer
-- the control flow  from the host to the device
-- data between the host and device ``DEVICS`` 
+ - the control flow  from the host to the device
+ - data between the host and device ``DEVICS`` 
+ - data between ``HOST``  and  ``DEVICS`` 
 
 To execute code on a target device
  ``target``
