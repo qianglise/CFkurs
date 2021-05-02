@@ -13,7 +13,7 @@ offloading to GPU
 target
 ------------------
 Since version 4.0 , OpenMP supports heterogeneous systems
-OpenMP uses "target construct" to offload execution from the host to the target device(s), and hence the directive name.
+OpenMP uses ''target construct'' to offload execution from the host to the target device(s), and hence the directive name.
 
 Such a host/device model is generally used by OpenMP for target:
 - Normally there is only one single host: CPU
