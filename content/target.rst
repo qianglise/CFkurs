@@ -18,8 +18,8 @@ Since version 4.0 , OpenMP supports heterogeneous systems
 OpenMP uses target construct to offload execution from the host to the target device(s), and hence the directive name.
 
 Such a host/device model is generally used by OpenMP for target:
-- Generally one single host: CPU
-- one or multiple target devices of the same kind: CPU, GPU, FPGA, ...
+	- Generally one single host: CPU
+	- one or multiple target devices of the same kind: CPU, GPU, FPGA, ...
 
 
 
