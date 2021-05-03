@@ -1,14 +1,10 @@
 offloading to GPU
 ===================================
 
-.. questions::
-
-   - What functions should you use for RMA?
-
 .. objectives::
 
-   - Learn how to create memory windows.
-   - Learn how to access remote memory windows.
+   - Learn how to create .
+   - Learn how to access 
 
 .. prereq::
 
@@ -20,11 +16,12 @@ offloading to GPU
 
 host-device model
 ------------------
-Since version 4.0 , OpenMP supports heterogeneous systems
-OpenMP uses ''target''  construct to offload execution from the host to the target device(s), and hence the directive name.
-In addition, the associated data needs to be transferred to the device(s) as well.  By default all variables within the lexical scope of the construct are copied to and from the device and this will be discussed more in the next chapter. Once transferred, the target device owns the data and  accesses by the host during the execution of the target region is forbidden.
+Since version 4.0 , OpenMP supports heterogeneous systems.
+OpenMP uses target  construct to offload execution from the host to the target device(s), 
+and hence the directive name.In addition, the associated data needs to be transferred to the device(s) as well.  By default all variables within the lexical scope of the construct are copied to and from the device and this will be discussed more in the next chapter. Once transferred, the target device owns the data and  accesses by the host during the execution of the target region is forbidden.
 
 .. exceptions::
+
   1. device is host
   2. data already exists on the device from a previous execution
 
