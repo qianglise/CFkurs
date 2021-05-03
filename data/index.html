@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>data environment &mdash; LESSON NAME  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/mystnb.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_lesson.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_rtd_theme_ext_color_contrast.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/minipres.js"></script>
+        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex/" />
+    <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Quick Reference" href="../quick-reference/" />
+    <link rel="prev" title="offloading to GPU" href="../target/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../" class="icon icon-home"> LESSON NAME
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">The lesson</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../target/">offloading to GPU</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">data environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-mapping">data mapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-shaping">data shaping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-region">data region</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structured-data-regions">Structured Data Regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unstructured-data-regions">unstructured Data Regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optimize-data-transfers">Optimize Data Transfers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-reference/">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/">Instructor’s guide</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">LESSON NAME</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>data environment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/coderefinery/content/blob/master/content/data.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-environment">
+<h1>data environment<a class="headerlink" href="#data-environment" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-objectives objectives admonition">
+<p class="admonition-title">Objectives</p>
+<ul class="simple">
+<li><p>Understand what are data movement</p></li>
+<li><p>Understand what are structured and unstructured data clauses</p></li>
+<li><p>Learn how to move data explicitly</p></li>
+<li><p>Learn how to compile and run OpenACC code with data movement directives</p></li>
+</ul>
+</div>
+<div class="admonition-prerequisites prereq admonition">
+<p class="admonition-title">Prerequisites</p>
+<ol class="arabic simple">
+<li><p>You need …</p></li>
+<li><p>Basic understanding of …</p></li>
+</ol>
+</div>
+<p># data environment</p>
+<p>## data mapping</p>
+<div class="section" id="data-mapping">
+<h2>data mapping<a class="headerlink" href="#data-mapping" title="Permalink to this headline">¶</a></h2>
+<p>The map cluase on a device construct explicitly specifies how items  are mapped from the host to the device data environment.  The common mapped items consist of  arrays(array sections), scalars, pointers, and structure elements.
+Note that a C/C++ pointer is mapped as a zero-length array section. OpenMP uses a combination of implicit and explicit data mapping.</p>
+<p>implicit data movement
+within a target region</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>scalar variables are implicitly mapped as firstprivate and not copied back to the host at the end of the target region</p></li>
+<li><p>non-scalar/non-pointer variables which have a complete type are copied to the device at the start of the target region, and copied back at the end, the so-called  mapped with a map-type of tofrom</p></li>
+<li><p>Pointers are implicitly copied, but not the data they point to.</p></li>
+</ul>
+</div></blockquote>
+<p>explicit data movement
+explicit data movement is controled by the map clause
+Data allocated on the heap needs to be explicitly copied to/from the device:
+the various forms of the map cluase are</p>
+<blockquote>
+<div><p>– map(to:list): On entering the region, variables in the list are initialized on the device using the original values from the host (host to device copy).
+– map(from:list): At the end of the target region, the values from variables in the list are copied into the original variables on the host (device to host copy). On entering the region, the initial value of the variables on the device is not initialized.
+– map(tofrom:list): the effect of both a map-to and a map-from (host to device copy at start of region, device to host copy at end).
+– map(alloc:list): On entering the region, data is allocated and uninitialized on the device.
+– map(list): equivalent to map(tofrom:list).</p>
+</div></blockquote>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">:widths: auto
+  :delim: ;</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>10 min ; aaa</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>10 min ; bbb</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>map(to:list) ; On entering the region</p></td>
+<td><p>variables in the list are initialized on the device using the original values from the host (host to device copy)</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>map(from:list) ;   At the end of the target region</p></td>
+<td><p>the values from variables in the list are copied into the original variables on the host (device to host copy). On entering the region</p></td>
+<td><p>the initial value of the variables on the device is not initialized.</p></td>
+</tr>
+<tr class="row-odd"><td><p>map(tofrom:list) ;    the effect of both a map-to and a map-from (host to device copy at start of region</p></td>
+<td><p>device to host copy at end).</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>map(alloc:list) ;       On entering the region</p></td>
+<td><p>data is allocated and uninitialized on the device.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>map(list) ;  equivalent to map(tofrom:list)</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="data-shaping">
+<h2>data shaping<a class="headerlink" href="#data-shaping" title="Permalink to this headline">¶</a></h2>
+<p>To mapping data arrays  and pointers, one must use array section notation:
+C/C++: pointer [lower-bound:length]
+Fortran:
+OpenMP defines that the pointer itself (a) is mapped as a zero-length array section.
+– Zero length arrays: A[:0]</p>
+</div>
+<div class="section" id="data-region">
+<h2>data region<a class="headerlink" href="#data-region" title="Permalink to this headline">¶</a></h2>
+<p>Due to distinct memory spaces on host and device, transferring data becomes inevitable.
+From version 4.0, by default all variables within the lexical scope of the construct are copied to and from the device,</p>
+<p>How the target construct  creates storage, transfer data, and remove storage on the device  are clasiffied as two categories:  structured data region and unstructured data region</p>
+</div>
+<div class="section" id="structured-data-regions">
+<h2>Structured Data Regions<a class="headerlink" href="#structured-data-regions" title="Permalink to this headline">¶</a></h2>
+<p>The target data construct is used to create a structured data region which is convenient for providing persistent data on the device which could be used for subseqent target constructs.</p>
+</div>
+<div class="section" id="unstructured-data-regions">
+<h2>unstructured Data Regions<a class="headerlink" href="#unstructured-data-regions" title="Permalink to this headline">¶</a></h2>
+<p>The unstructured data constructs have much mor freedom in creating and deleting of data on the device at any appropriate point.</p>
+</div>
+<div class="section" id="optimize-data-transfers">
+<h2>Optimize Data Transfers<a class="headerlink" href="#optimize-data-transfers" title="Permalink to this headline">¶</a></h2>
+<p>◼ Reduce the amount of time spent transferring data
+▪ Use map clauses to enforce direction of data transfer.
+▪ Use target data, target enter data, target exit data constructs to keep
+data environment on the target device.
+Inefficient to move data around all the time
+Want to keep data resident on the device between target regions</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../quick-reference/" class="btn btn-neutral float-right" title="Quick Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../target/" class="btn btn-neutral float-left" title="offloading to GPU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The contributors.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
