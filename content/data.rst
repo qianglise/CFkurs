@@ -47,7 +47,6 @@ region, device to host copy at end).
  – map(list): equivalent to map(tofrom:list).
 
 | Arithmetic Operator | Initial value |
-|---------------------|---------------|
 | map(to:list)        |  On entering the region, variables in the list are initialized on the device using the
 original values from the host (host to device copy)           |
 | map(from:list)      |   At the end of the target region, the values from variables in the list are copied
