@@ -51,40 +51,13 @@ The execution on the device is host-centric and
 5.The host destroys the data environment on the device.
 
 
-`````{callout} Language-specific instructions
-  ````{tabs}
-    ```{tab} Python
+Here's an example of how to store binary data in an attribute, and then
+recover it::
 
-    The suggested solutions below use pytest. Further information can
-    be found in the [Quick Reference](./quick-reference#pytest).
-    ```
-
-    ```{tab} C++
-
-    The suggested solutions below use Catch2. Further information can
-    be found in the [Quick Reference](./quick-reference#catch2).
-    ```
-
-   ```{tab} R
-
-    The suggested solutions below use testthat. Further information can
-    be found in the [Quick Reference](./quick-reference#testthat).
-    ```
-
-    ```{tab} Julia
-
-    The suggested solutions below use Test. Further information can
-    be found in the [Quick Reference](./quick-reference#test).
-    ```
-
-    ```{tab} Fortran
-
-    The suggested solutions below use pFUnit. Further information on how to install 
-    pFUnit and set up tests can
-    be found in the [Quick Reference](./quick-reference#pfunit).
-    ```
-  ````
-`````
+    >>> binary_blob = b"Hello\x00Hello\x00"
+    >>> dset.attrs["attribute_name"] = np.void(binary_blob)
+    >>> out = dset.attrs["attribute_name"]
+    >>> binary_blob = out.tobytes()
 
 
 Target construct
