@@ -1,22 +1,17 @@
 data environment
 ===================================
 
-.. questions::
-
-   - What functions should you use for RMA?
-
 .. objectives::
-
-   - Understand what are data locality and data movement
+   - Understand what are data movement
    - Understand what are structured and unstructured data clauses
    - Learn how to move data explicitly
    - Learn how to compile and run OpenACC code with data movement directives
 
 .. prereq::
 
-   1. You need
-   2. Basic understanding of Git.
-   3. You need a 
+   1. You need ...
+   2. Basic understanding of ...
+
 
 
 
