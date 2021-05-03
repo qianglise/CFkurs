@@ -67,7 +67,9 @@ data region
 ------------------
 Due to distinct memory spaces on host and device, transferring data becomes inevitable. 
 From version 4.0, by default all variables within the lexical scope of the construct are copied to and from the device,
+
 .. exceptions::
+
   1. device is host
   2. data already exists on the device from a previous execution
 

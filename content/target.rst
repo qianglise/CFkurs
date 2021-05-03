@@ -120,11 +120,11 @@ target region on the device.
 
 Creating Parallelism on the Target Device
 ------------------
+
 OpenMP separates offload and parallelism
- -The target construct transfers the control flow to the device in a sequential and synchronous manner
- -Programmers need to explicitly create parallel regions on the target device
- -In practice, there is only a useful subset of OpenMP features for a target device such 
-as a GPU, e.g., no I/O, limited use of base language features.
+ - The target construct transfers the control flow to the device in a sequential and synchronous manner
+ - Programmers need to explicitly create parallel regions on the target device
+ - In practice, there is only a useful subset of OpenMP features for a target device such as a GPU, e.g., no I/O, limited use of base language features.
 
 
 teams distribute Construct Bristol
