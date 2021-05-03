@@ -26,11 +26,8 @@ Intro add
    :maxdepth: 1
    :caption: The lesson
 
-   motivation
    target
-   continuous-integration
-   test-design
-   conclusions
+   data
 
 
 .. toctree::
