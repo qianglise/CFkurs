@@ -51,12 +51,49 @@ The execution on the device is host-centric and
 5.The host destroys the data environment on the device.
 
 
+`````{callout} Language-specific instructions
+  ````{tabs}
+    ```{tab} Python
+
+    The suggested solutions below use pytest. Further information can
+    be found in the [Quick Reference](./quick-reference#pytest).
+    ```
+
+    ```{tab} C++
+
+    The suggested solutions below use Catch2. Further information can
+    be found in the [Quick Reference](./quick-reference#catch2).
+    ```
+
+   ```{tab} R
+
+    The suggested solutions below use testthat. Further information can
+    be found in the [Quick Reference](./quick-reference#testthat).
+    ```
+
+    ```{tab} Julia
+
+    The suggested solutions below use Test. Further information can
+    be found in the [Quick Reference](./quick-reference#test).
+    ```
+
+    ```{tab} Fortran
+
+    The suggested solutions below use pFUnit. Further information on how to install 
+    pFUnit and set up tests can
+    be found in the [Quick Reference](./quick-reference#pfunit).
+    ```
+  ````
+`````
+
+
 Target construct
 ------------------
 The target construct consists of a target directive and an execution region. It is used to transfer both the control flow  from the host to the device and the data between the host and device.
 
 Syntax
  - (C/C++)
+
 #pragma omp target [clause[[,] clause],...]
 structured-block
  - (Fortran)
