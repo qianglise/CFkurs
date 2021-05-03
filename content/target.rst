@@ -51,9 +51,7 @@ The execution on the device is host-centric and
 5.The host destroys the data environment on the device.
 
 
-Here's an example of how to store binary data in an attribute, and then
-recover it::
-
+code::
     >>> binary_blob = b"Hello\x00Hello\x00"
     >>> dset.attrs["attribute_name"] = np.void(binary_blob)
     >>> out = dset.attrs["attribute_name"]
