@@ -43,20 +43,12 @@ The host is where the  thread begins execution
 .. _device_execution_model:
 device execution model
 ------------------
-The execution model is host-centric and
-Host creates/destroys data environment on the device(s)
-Host maps data to the device data environment.
-Host then offloads accelerator regions to the device for execution
-Host updates the data between the host and the device.
-Host destroys data environment on device.
-
-
-To begin, 
-the host creates the data environments on the device(s). 
-The host then maps data to the device data environment, which is data movement to the device. 
-The host then offloads OpenMP target regions to the target device; that is, the code is executed on the device. 
-After execution, the host updates the data between the host and the device, which is transferring data from the device to the host. 
-The host then destroys the data environment on the device.
+The execution on the device is host-centric and 
+1.the host creates the data environments on the device(s) 
+2.the host maps data to the device data environment, which is data movement to the device 
+3.the host offloads OpenMP target regions to the target device to be  executed
+4.the host transfers data from the device to the host 
+5.The host destroys the data environment on the device.
 
 
 Target construct
