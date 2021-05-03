@@ -8,6 +8,12 @@ data environment
    - Learn how to move data explicitly
    - Learn how to compile and run OpenACC code with data movement directives
 
+```{Objectives}
+- Learn how to determine what kind of unit tests can be performed for different type of functions.
+- Learn how to perform test-driven development in which tests for a function are designed and implemented before the function is written.
+- Learn how to test functions whose output depend on random numbers.
+```
+
 .. prereq::
 
    1. You need ...
